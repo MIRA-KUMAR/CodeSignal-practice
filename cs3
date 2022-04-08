@@ -1,0 +1,12 @@
+# Given the string, check if it is a palindrome.
+
+def solution(inputString):
+
+    l, r = 0, len(inputString) - 1
+    while l <= r:
+        if inputString[l] != inputString[r]:
+            return False
+        l += 1
+        r -= 1
+
+    return True

@@ -1,0 +1,23 @@
+# # Given a sequence of integers as an array, determine whether it is possible to obtain a strictly increasing sequence by removing no more than one element from the array.
+
+def solution(sequence):
+
+    drop = False
+    prev = last = min(sequence) - 1
+
+    for ele in sequence:
+        if ele <= last:
+            if drop:
+                return False
+            else:
+                drop = True
+
+            if ele <= prev:
+                prev = last
+            elif ele >= prev:
+                prev = last = ele
+
+        else:
+            prev, last = last, ele
+
+    return True

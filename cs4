@@ -1,0 +1,13 @@
+# Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+
+def solution(inputArray):
+
+    l, r = 0, 1
+    ele = float('-inf')
+
+    while r < len(inputArray):
+        a = inputArray[l] * inputArray[r]
+        ele = max(a, ele)
+        l += 1
+        r += 1
+    return ele
